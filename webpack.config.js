@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = (env, options) => {
   const isProduction = options.mode === 'production';
@@ -14,7 +15,7 @@ module.exports = (env, options) => {
       poll: true,
       ignored: /node_modules/,
     },
-    entry: ['./src/index.js', './src/css/owfont-regular.css', './src/css/style.css'],
+    entry: './src/index.js', //'./src/css/owfont-regular.css', './src/css/style.css',//
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'script.js',
@@ -51,12 +52,12 @@ module.exports = (env, options) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: 'index.html',
-      }),
-      new MiniCssExtractPlugin({
-        filename: 'style.css',
-      }),
+      // new HtmlWebpackPlugin({
+      //   template: 'index.html',
+      // }),
+      // new MiniCssExtractPlugin({
+      //   filename: 'style.css',
+      // }),
     ],
   };
   return config;

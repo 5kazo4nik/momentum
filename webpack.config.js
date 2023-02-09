@@ -32,22 +32,22 @@ module.exports = (env, options) => {
             },
           },
         },
-        {
-          test: /\.css$/,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
-        },
-        {
-          test: /\.(ico|png|svg|jpe?g|gif|mp3)$/,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.html$/,
-          loader: 'html-loader',
-        },
+        // {
+        //   test: /\.css$/,
+        //   use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        // },
+        // {
+        //   test: /\.(ico|png|svg|jpe?g|gif|mp3)$/,
+        //   type: 'asset/resource',
+        // },
+        // {
+        //   test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        //   type: 'asset/resource',
+        // },
+        // {
+        //   test: /\.html$/,
+        //   loader: 'html-loader',
+        // },
       ],
     },
     plugins: [

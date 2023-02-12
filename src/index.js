@@ -3,6 +3,9 @@ import { showGreeting, setName } from './js/greeting';
 import { setBg, switchToNextImg, switchToPrevImg } from './js/backgroundSlider';
 import { getWeather, setInput, changeCityWeather } from './js/weather';
 import { getQuote, changeQuote } from './js/quote';
+import { setPlayer, setPlayList } from './js/audioplayer';
+
+window.addEventListener('DOMContentLoaded', setPlayList);
 
 window.onload = function () {
   console.log('Hello world!');
@@ -32,4 +35,6 @@ window.onload = function () {
   getQuote();
   // Обновляет цитату
   changeQuote();
+
+  setPlayer();
 };

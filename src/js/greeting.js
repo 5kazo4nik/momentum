@@ -8,11 +8,13 @@ function showGreeting() {
   setTimeout(showGreeting, 1000);
 }
 
+// Получает текущий час
 const defineTime = () => {
   const hour = new Date().getHours();
   return hour;
 };
 
+// Получает текущую часть дня
 const getTimeOfDay = (hour) => {
   if (hour >= 0 && hour < 6) {
     return 'night';
@@ -33,10 +35,12 @@ function setName() {
   setNameFromLocalStorage();
 }
 
+// Сохраняет имя в локальное зранилище
 function saveLocalStorage() {
   localStorage.setItem('name', nameInput.value);
 }
 
+// Если в localStorage сохранено имя, ставит его в инпут
 function setNameFromLocalStorage() {
   if (localStorage.getItem('name')) {
     nameInput.value = localStorage.name;

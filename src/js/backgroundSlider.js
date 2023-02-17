@@ -1,7 +1,7 @@
 import { defineTime, getTimeOfDay } from './greeting';
 
 const timeOfDay = getTimeOfDay(defineTime());
-let bgNum = getRandomNum().padStart(2, '0');
+let bgNum = getRandomNum(20, 1).padStart(2, '0');
 
 // создает картинку, вставляет в нее сгенерированную ссылку и после загрузки картинки вставляет её в bg
 function setBg() {
@@ -12,8 +12,8 @@ function setBg() {
   };
 }
 
-function getRandomNum() {
-  return Math.round(Math.random() * (20 - 1) + 1).toString();
+function getRandomNum(max, min = 0) {
+  return Math.round(Math.random() * (max - min) + min).toString();
 }
 
 // Обработка кнопки следущий слайд
@@ -44,4 +44,4 @@ const switchToPrevImg = () => {
   buttonPrev.addEventListener('click', switchPrev);
 };
 
-export { setBg, switchToNextImg, switchToPrevImg };
+export { setBg, switchToNextImg, switchToPrevImg, getRandomNum };

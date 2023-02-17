@@ -343,14 +343,12 @@ body {
   top: 4%;
   left: 85%;
   display: flex;
-  /* flex-direction: column; */
   text-align: center;
   gap: 5px;
 }
 
 .player__sound-volume {
   width: 50px;
-  /* transform: rotate(-90deg); */
   cursor: pointer;
 }
 
@@ -358,6 +356,38 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
+}
 
-  /* margin: 15px 0 0 20px; */
+.lang {
+  position: absolute;
+  display: flex;
+  cursor: pointer;
+  left: 2%;
+  bottom: 1.5%;
+  border-radius: 25%;
+  background-color: rgba(230, 220, 220, 0.973);
+  color: black;
+}
+
+.lang__rus {
+  padding: 5px 5px 5px 5px;
+  border-radius: 30% 30% 30% 0;
+}
+
+.lang__eng {
+  border-radius: 30% 30% 0 30%;
+  padding: 5px 5px 5px 5px;
+  transition: all 1s ease-in-out;
+}
+
+.lang__rus,
+.lang__eng {
+  background-color: rgb(104, 72, 72);
+  color: #fff;
+}
+
+.lang_active {
+  background-color: rgba(230, 220, 220, 0.973);
+  color: black;
+  transition: all 1s ease-in-out;
 }

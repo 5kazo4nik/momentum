@@ -225,7 +225,7 @@ const volumeToggle = () => {
 const savePrevVolume = () => {
   soundVolume.addEventListener('change', () => {
     prevVolume = soundVolume.value;
-    if (audio.volume != 0) {
+    if (soundVolume.value > '0.05') {
       soundBtn.src = '../src/assets/png/soundOn.png';
     } else {
       soundBtn.src = '../src/assets/png/soundOff.png';

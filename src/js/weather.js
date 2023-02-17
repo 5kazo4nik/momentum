@@ -27,8 +27,8 @@ function setInput(city = 'Minsk') {
 }
 
 // Отправляет запрос через api и получает ответ, если ответ ошибка - удаляются данные погоды выведенные ранее и выводится ошибка, и наоборот
-async function getWeather(city = cityInput.value) {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=en&appid=217076b22f3e327304bc1e0be1c757df&units=metric`;
+async function getWeather(lng = 'en', city = cityInput.value) {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lng}&appid=217076b22f3e327304bc1e0be1c757df&units=metric`;
   const resolve = await fetch(url);
   const data = await resolve.json();
 
@@ -41,8 +41,8 @@ async function getWeather(city = cityInput.value) {
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     weatherDescription.textContent = `${data.weather[0].description}`;
-    wind.textContent = `Wind: ${data.wind.speed} m/s`;
-    humidity.textContent = `Humidity: ${data.main.humidity}%`;
+    wind.textContent = `${lng === 'en' ? 'Wind' : 'Ветер'}: ${data.wind.speed} ${lng === 'en' ? 'm/s' : 'м/с'}`;
+    humidity.textContent = `${lng === 'en' ? 'Humidity' : 'Влажность'}: ${data.main.humidity}%`;
   }
 }
 

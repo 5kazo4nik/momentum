@@ -1,11 +1,19 @@
+import i18next from 'i18next';
+
 const greeting = document.querySelector('.greeting');
 const nameInput = document.querySelector('.name');
 
-function showGreeting() {
+function showGreeting(lng = 'en') {
   const hour = defineTime();
   const dayTime = getTimeOfDay(hour);
-  greeting.textContent = `Good ${dayTime}`;
-  setTimeout(showGreeting, 1000);
+  if (lng == 'ru') {
+    greeting.textContent = i18next.t('greeting') + ' ' + i18next.t(dayTime);
+    nameInput.placeholder = 'Введите имя';
+  } else {
+    greeting.textContent = `Good ${dayTime}`;
+    nameInput.placeholder = 'Enter name';
+  }
+  setTimeout(() => showGreeting(lng), 2000000);
 }
 
 // Получает текущий час

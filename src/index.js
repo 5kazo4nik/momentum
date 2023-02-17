@@ -4,6 +4,7 @@ import { setBg, switchToNextImg, switchToPrevImg } from './js/backgroundSlider';
 import { getWeather, setInput, changeCityWeather } from './js/weather';
 import { getQuote, changeQuote } from './js/quote';
 import { setPlayer, setPlayList } from './js/audioplayer';
+import { setLang, changeLang } from './js/translation';
 
 window.addEventListener('DOMContentLoaded', setPlayList);
 
@@ -14,7 +15,7 @@ window.onload = function () {
   showTime();
 
   // выводит приветсвие
-  showGreeting();
+  // showGreeting('ru');
   // получает имя введеное в инпуте в localStorage ранее
   setName();
 
@@ -29,12 +30,17 @@ window.onload = function () {
   // Устанавливает значение инпута погоды
   setInput();
   // Получает погоду и изменяет значения в html
-  getWeather();
+  // getWeather('ru');
 
   // Делает запрос, получает и устанавливает цитату
-  getQuote();
+  // getQuote('ru');
   // Обновляет цитату
   changeQuote();
 
+  // Устанавливает плеер
   setPlayer();
+
+  changeLang();
+
+  setLang();
 };

@@ -3,11 +3,11 @@
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 
-function showTime() {
+function showTime(lng = 'en') {
   const currentDate = new Date();
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
   time.textContent = currentDate.toLocaleTimeString();
-  date.textContent = currentDate.toLocaleDateString('en-US', options);
+  date.textContent = currentDate.toLocaleDateString(lng, options);
   setTimeout(showTime, 1000);
 }
 

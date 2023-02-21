@@ -11,10 +11,6 @@
 </head>
 
 <body>
-  <div class="lang">
-    <div class="lang__eng ">Eng</div>
-    <div class="lang__rus lang_active">Rus</div>
-  </div>
   <header class="header">
     <div class="player">
       <div class="player__volume">
@@ -31,6 +27,49 @@
       </div>
       <ul class="play-list">
       </ul>
+    </div>
+    <div class="settings__button">
+      <div class="settings__dot"></div>
+      <div class="settings__dot"></div>
+      <div class="settings__dot"></div>
+    </div>
+    <div class="settings">
+      <div class="images">
+        <div class="images__items">
+          <div class="image__item  image__item_active">Default</div>
+          <div class="image__item">Unsplash</div>
+          <div class="image__item">Flickr</div>
+        </div>
+        <input type="text" class="images__tags">
+      </div>
+
+      <div class="visibility">
+        <ul class="visibility__list">
+          <li class="visibility__item">
+            <p class="visibility__content">Time</p>
+          </li>
+          <li class="visibility__item">
+            <p class="visibility__content">Date</p>
+          </li>
+          <li class="visibility__item">
+            <p class="visibility__content">Quote</p>
+          </li>
+          <li class="visibility__item">
+            <p class="visibility__content">Greeting</p>
+          </li>
+          <li class="visibility__item">
+            <p class="visibility__content">Audio</p>
+          </li>
+          <li class="visibility__item">
+            <p class="visibility__content">Weather</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="lang">
+        <div class="lang__eng lang_active">Eng</div>
+        <div class="lang__rus">Rus</div>
+      </div>
     </div>
     <div class="weather">
       <input type="text" class="city" />

@@ -1,10 +1,11 @@
 import { showTime } from './js/time';
 import { showGreeting, setName } from './js/greeting';
-import { setBg, switchToNextImg, switchToPrevImg } from './js/backgroundSlider';
+import { setBg, switchToNextImg, switchToPrevImg, setInputTags, changeApiByClick } from './js/backgroundSlider';
 import { getWeather, setInput, changeCityWeather } from './js/weather';
 import { getQuote, changeQuote } from './js/quote';
 import { setPlayer, setPlayList } from './js/audioplayer';
 import { setLang, changeLang } from './js/translation';
+import { setSettingsButton } from './js/settingsMenu';
 
 window.addEventListener('DOMContentLoaded', setPlayList);
 
@@ -24,6 +25,10 @@ window.onload = function () {
   // Обработка стрелки следущего слайда и предыдущего слайда
   switchToNextImg();
   switchToPrevImg();
+  // Меняет задний фон при изменении запроса к api
+  setInputTags();
+  // Изменяет задний фон при изменении api
+  changeApiByClick();
 
   // Изменяет значение погоды по введенному инпуту и сохраняет в localStorage
   changeCityWeather();
@@ -40,7 +45,11 @@ window.onload = function () {
   // Устанавливает плеер
   setPlayer();
 
+  // Изменить язык при клике
   changeLang();
-
+  // Установить язык
   setLang();
+
+  // Поведение кнопки settings
+  setSettingsButton();
 };

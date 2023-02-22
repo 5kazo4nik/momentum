@@ -153,6 +153,12 @@ body {
   width: 180px;
   min-height: 180px;
   text-align: left;
+  transition: 0.5s;
+}
+
+.weather_invisible {
+  opacity: 0;
+  transform: scale(1, 0);
 }
 
 .weather-error {
@@ -225,12 +231,26 @@ body {
   font-family: 'Arial-MT';
   font-size: 100px;
   letter-spacing: -4px;
+  transition: 0.5s;
+}
+
+.time_invisible {
+  opacity: 0;
+  transform: scaleX(-1);
+  cursor: default;
 }
 
 .date {
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
+  transition: 0.5s;
+}
+
+.date_invisible {
+  opacity: 0;
+  transform: translateY(20px);
+  cursor: default;
 }
 
 .greeting-container {
@@ -241,6 +261,13 @@ body {
   min-height: 48px;
   width: 100vw;
   font-size: 40px;
+  transition: 0.5s;
+}
+
+.greeting-container_invisible {
+  opacity: 0;
+  transform: scale(0, 0);
+  cursor: default;
 }
 
 .greeting {
@@ -280,6 +307,15 @@ body {
 .change-quote {
   margin-bottom: 30px;
   background-image: url('../assets/svg/reload.svg');
+}
+
+.quote-block {
+  transition: 0.5s;
+}
+
+.quote-block_invisible {
+  opacity: 0;
+  transform: scaleZ(0);
 }
 
 .quote {
@@ -338,6 +374,14 @@ body {
 
 .player {
   position: relative;
+  transform: scaleY(1);
+  opacity: 1;
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.player_invisible {
+  transform: scaleY(0);
+  opacity: 0;
 }
 
 .player__volume {
@@ -530,13 +574,14 @@ body {
 
 @media (max-width: 540px) {
   .settings {
-    top: 58%;
-    left: 94%;
+    top: 55%;
+    left: 75%;
+    min-width: 250px;
   }
 
   .settings__button {
-    top: 85%;
-    left: 95%;
+    top: 83%;
+    left: 75%;
   }
 
   .visibility__item {

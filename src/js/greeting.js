@@ -7,7 +7,7 @@ function showGreeting(lng = 'en') {
   const hour = defineTime();
   const dayTime = getTimeOfDay(hour);
   if (lng == 'ru') {
-    greeting.textContent = i18next.t('greeting') + ' ' + i18next.t(dayTime);
+    greeting.textContent = i18next.t('greet') + ' ' + i18next.t(dayTime);
     nameInput.placeholder = 'Введите имя';
   } else {
     greeting.textContent = `Good ${dayTime}`;

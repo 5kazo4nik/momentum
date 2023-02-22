@@ -2,6 +2,7 @@ import i18next from 'i18next';
 import { defineTime, getTimeOfDay, showGreeting } from './greeting';
 import { getWeather } from './weather';
 import { getQuote, changeQuote } from './quote';
+import { itemsContent } from './visibility';
 
 const langButton = document.querySelector('.lang');
 const langButtonEng = document.querySelector('.lang__eng');
@@ -29,11 +30,27 @@ i18next.init({
   resources: {
     ru: {
       translation: {
-        greeting: `${greeting}`,
+        greet: `${greeting}`,
         afternoon: 'день',
         night: 'ночь',
         morning: 'утро',
         evening: 'вечер',
+        time: 'Время',
+        date: 'Дата',
+        quote: 'Цитата',
+        greeting: 'Приветствие',
+        audio: 'Плеер',
+        weather: 'Погода',
+      },
+    },
+    en: {
+      translation: {
+        time: 'Time',
+        date: 'Data',
+        quote: 'Quote',
+        greeting: 'Greeting',
+        audio: 'Audio',
+        weather: 'Weather',
       },
     },
   },
@@ -55,7 +72,6 @@ const getLangByClick = (btn) => {
   } else {
     lang = 'ru';
   }
-  console.log(lang);
   return lang;
 };
 
@@ -86,14 +102,16 @@ const changeLang = (e) => {
   let lang;
   if (e) {
     lang = getLangByClick(e.target);
-    setActiveBtnLang(lang);
   } else {
     lang = getLang();
   }
+  setActiveBtnLang(lang);
+  i18next.changeLanguage(lang);
   showGreeting(lang);
   getWeather(lang);
   getQuote(lang);
   changeQuote(lang);
+  setVisibleSettingsLang(lang);
 };
 
 // Сохраняет язык в localStorage
@@ -112,5 +130,11 @@ const getLang = () => {
   }
   return lang;
 };
+
+function setVisibleSettingsLang() {
+  itemsContent.forEach((el) => {
+    el.textContent = i18next.t(el.dataset.toggle);
+  });
+}
 
 export { setLang, changeLang, getCurrentLang };

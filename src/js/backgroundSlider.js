@@ -57,7 +57,7 @@ function setInputTags() {
 
 // Получить рандомное число
 function getRandomNum(max, min = 0) {
-  return Math.round(Math.random() * (max - min) + min).toString();
+  return Math.floor(Math.random() * (max - min) + min).toString();
 }
 
 // Обработка кнопки следущий слайд

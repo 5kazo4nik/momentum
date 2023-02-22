@@ -6,6 +6,7 @@ import { getQuote, changeQuote } from './js/quote';
 import { setPlayer, setPlayList } from './js/audioplayer';
 import { setLang, changeLang } from './js/translation';
 import { setSettingsButton } from './js/settingsMenu';
+import { hideBlockByClick, setSettingsVisibility } from './js/visibility';
 
 window.addEventListener('DOMContentLoaded', setPlayList);
 
@@ -52,4 +53,9 @@ window.onload = function () {
 
   // Поведение кнопки settings
   setSettingsButton();
+
+  // Устанавливает обработчкик который изменяет значение кнопоки настроек и видимость элементов по клику
+  hideBlockByClick();
+  // Устанавливает сохраненные настройки видимости
+  setSettingsVisibility();
 };

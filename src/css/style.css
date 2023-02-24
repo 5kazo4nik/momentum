@@ -10,7 +10,7 @@
 }
 
 body {
-  min-width: 480px;
+  min-width: 320px;
   min-height: 100vh;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
@@ -421,12 +421,13 @@ body {
 .lang__rus {
   padding: 5px 5px 5px 5px;
   border-radius: 30% 30% 30% 0;
+  transition: 0.5s;
 }
 
 .lang__eng {
   border-radius: 30% 30% 0 30%;
   padding: 5px 5px 5px 5px;
-  transition: all 1s ease-in-out;
+  transition: 0.5s;
 }
 
 .lang__rus,
@@ -434,11 +435,16 @@ body {
   background-color: rgb(104, 72, 72);
   color: #fff;
 }
+.lang__eng:hover,
+.lang__rus:hover {
+  color: #fff;
+  background-color: #7e6f6f;
+}
 
 .lang_active {
   background-color: rgba(230, 220, 220, 0.973);
   color: black;
-  transition: all 1s ease-in-out;
+  transition: 0.5s;
 }
 
 /* //////////////////////////////////////////////////////////// НАСТРОЙКИ */
@@ -499,11 +505,25 @@ body {
   font-size: 14px;
   font-weight: 600;
   background-color: rgb(104, 72, 72);
+  transition: 0.5s;
 }
 
 .image__item:first-child,
 .image__item:last-child {
   border-radius: 30% 30% 30% 30%;
+}
+
+.image__item:hover {
+  color: #fff;
+  background-color: #7e6f6f;
+}
+
+.image__item:hover:first-child {
+  border-radius: 30% 0 0 30%;
+}
+
+.image__item:hover:last-child {
+  border-radius: 0 30% 30% 0;
 }
 
 .image__item_active {
@@ -551,8 +571,13 @@ body {
 .visibility__item {
   width: 30%;
   color: #000;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.visibility__item:hover {
+  transform: translateY(-2px);
 }
 
 .visibility__content {
@@ -563,6 +588,12 @@ body {
   padding: 3px;
   font-size: 14px;
   background-color: rgb(104, 72, 72);
+  transition: 0.5s;
+}
+
+.visibility__content:hover {
+  color: #fff;
+  background-color: #7e6f6f;
 }
 
 .visibility__content_active {
@@ -572,19 +603,30 @@ body {
 
 /* ////////////////////////////////////////////// */
 
+.school {
+  display: flex;
+}
+
 @media (max-width: 540px) {
   .settings {
-    top: 55%;
-    left: 75%;
+    top: 47%;
+    left: 50%;
     min-width: 250px;
   }
 
   .settings__button {
-    top: 83%;
-    left: 75%;
+    top: 76%;
+    left: 50%;
   }
 
   .visibility__item {
     width: 50%;
+  }
+}
+
+@media (max-width: 430px) {
+  .player__volume {
+    top: 100%;
+    left: 0;
   }
 }

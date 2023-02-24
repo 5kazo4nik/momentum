@@ -41,7 +41,7 @@ async function getWeather(lng = 'en', city = cityInput.value) {
     weatherIcon.classList.add(`owf-${data.weather[0].id}`);
     temperature.textContent = `${Math.round(data.main.temp)}°C`;
     weatherDescription.textContent = `${data.weather[0].description}`;
-    wind.textContent = `${lng === 'en' ? 'Wind' : 'Ветер'}: ${data.wind.speed} ${lng === 'en' ? 'm/s' : 'м/с'}`;
+    wind.textContent = `${lng === 'en' ? 'Wind' : 'Ветер'}: ${Math.round(data.wind.speed)} ${lng === 'en' ? 'm/s' : 'м/с'}`;
     humidity.textContent = `${lng === 'en' ? 'Humidity' : 'Влажность'}: ${data.main.humidity}%`;
   }
 }

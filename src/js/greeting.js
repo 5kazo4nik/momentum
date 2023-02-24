@@ -3,6 +3,7 @@ import i18next from 'i18next';
 const greeting = document.querySelector('.greeting');
 const nameInput = document.querySelector('.name');
 
+// Определяет текущее время дня и с учетом языка рекурсивно показывает приветствие
 function showGreeting(lng = 'en') {
   const hour = defineTime();
   const dayTime = getTimeOfDay(hour);

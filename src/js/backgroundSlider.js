@@ -1,5 +1,5 @@
 import { defineTime, getTimeOfDay } from './greeting';
-import { getCurrentLang, getLang, langButton } from './translation';
+import { getCurrentLang } from './translation';
 
 const timeOfDay = getTimeOfDay(defineTime()); // Текущее впремя дня
 let bgNum = getRandomNum(20, 1).padStart(2, '0'); // Случайное число

@@ -114,9 +114,12 @@ function playByClick() {
   playList.addEventListener('click', (e) => {
     let prevTrack = currentTrack;
     getTrack(e);
-    if (isPlay && prevTrack == currentTrack) {
-      console.log('agaa');
-      pauseAudio();
+
+    if (prevTrack !== currentTrack) {
+      currentTime = 0;
+      isPlay = true;
+      playButton.classList.add('pause');
+      playAudio(currentTrack);
     }
   });
 }
@@ -125,10 +128,9 @@ function playByClick() {
 function getTrack(e) {
   if (e.target.classList.contains('play-item')) {
     currentTrack = [...playList.children].indexOf(e.target);
-    playButton.classList.add('pause');
-    currentTime = 0;
-    isPlay = true;
-    playAudio(currentTrack);
+    playButton.classList.toggle('pause');
+    isPlay = !isPlay;
+    playOrPause();
   }
 }
 

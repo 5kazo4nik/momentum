@@ -3,6 +3,7 @@ import { defineTime, getTimeOfDay, showGreeting } from './greeting';
 import { getWeather } from './weather';
 import { getQuote, changeQuote } from './quote';
 import { itemsContent } from './visibility';
+import { showDate } from './time';
 
 const langButton = document.querySelector('.lang');
 const langButtonEng = document.querySelector('.lang__eng');
@@ -108,6 +109,7 @@ const changeLang = (e) => {
   setActiveBtnLang(lang);
   i18next.changeLanguage(lang);
   showGreeting(lang);
+  showDate(lang);
   getWeather(lang);
   getQuote(lang);
   changeQuote(lang);

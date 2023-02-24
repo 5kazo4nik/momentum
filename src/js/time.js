@@ -3,16 +3,24 @@
 const time = document.querySelector('.time');
 const date = document.querySelector('.date');
 
-function showTime(lng = 'en') {
+function showTime() {
+  const currentDate = new Date();
+
+  time.textContent = currentDate.toLocaleTimeString();
+  setTimeout(showTime, 1000);
+}
+
+function showDate(lang = 'en') {
   const currentDate = new Date();
   const options = { weekday: 'long', month: 'long', day: 'numeric' };
-  time.textContent = currentDate.toLocaleTimeString();
-  date.textContent = currentDate.toLocaleDateString(lng, options);
-  setTimeout(showTime, 1000);
+  date.textContent = currentDate.toLocaleDateString(lang, options);
+  setTimeout(() => {
+    showDate(lang);
+  }, 2000000);
 }
 
 // function showTime() {
 //   setInterval(setTime, 1000);
 // }
 
-export { showTime };
+export { showTime, showDate };

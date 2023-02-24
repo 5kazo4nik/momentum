@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', setPlayList);
 window.onload = function () {
   console.log('Hello world!');
 
-  // выводит время и дату
+  // выводит время (дата выводится в функции changeLang с помощью showDate)
   showTime();
 
   // выводит приветсвие

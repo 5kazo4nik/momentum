@@ -604,10 +604,34 @@ body {
 /* ////////////////////////////////////////////// */
 
 .school {
+  /* width: 100%; */
+  position: absolute;
+  left: 1%;
+  bottom: 15%;
   display: flex;
+  /* justify-content: space-between; */
+  flex-direction: column;
+  align-items: start;
+}
+
+.school a img {
+  width: 50px;
+  height: 50px;
 }
 
 @media (max-width: 540px) {
+  .body {
+    font-size: 14px;
+  }
+
+  .weather {
+    width: 140px;
+  }
+
+  .city {
+    width: 130px;
+  }
+
   .settings {
     top: 47%;
     left: 50%;
@@ -621,6 +645,49 @@ body {
 
   .visibility__item {
     width: 50%;
+  }
+
+  .time {
+    min-height: 60px;
+    font-size: 52px;
+  }
+
+  .date {
+    min-height: 20px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+  }
+
+  .greeting-container {
+    min-height: 32px;
+    font-size: 25px;
+  }
+
+  .name {
+    font-size: 25px;
+  }
+
+  .player-controls {
+    width: 95px;
+  }
+
+  .play {
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+  }
+
+  .play-prev,
+  .play-next {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+  }
+
+  .player__volume {
+    /* top: 100%; */
+    left: 70%;
   }
 }
 

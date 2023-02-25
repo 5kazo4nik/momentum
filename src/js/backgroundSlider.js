@@ -17,17 +17,17 @@ async function setBg() {
   setSource();
   setTags();
   if (source === 'Default') {
-    src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+    src = `https://raw.githubusercontent.com/5kazo4nik/momentum-default-images/assets/images/${timeOfDay}/${bgNum}.jpg`;
   } else if (source === 'Unsplash') {
     src = await getUnsplashApi(tags);
     if (src == 403) {
-      src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+      src = `https://raw.githubusercontent.com/5kazo4nik/momentum-default-images/assets/images/${timeOfDay}/${bgNum}.jpg`;
       alert(getCurrentLang() == 'en' ? 'Exceeded the limit of images' : 'Превышен лимит картинок');
     }
   } else if (source === 'Flickr') {
     src = await getFlickrApi(tags);
     if (src === 'err') {
-      src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
+      src = `https://raw.githubusercontent.com/5kazo4nik/momentum-default-images/assets/images/${timeOfDay}/${bgNum}.jpg`;
       alert(getCurrentLang() == 'en' ? 'Image request error' : 'Ошибка запроса картинки');
     }
   }
@@ -46,7 +46,7 @@ function changeApiByClick() {
 
 // По событию blur сохранить теги, изменить переменную тегов и применить изменения
 function setInputTags() {
-  inputTags.addEventListener('blur', (e) => {
+  inputTags.addEventListener('change', (e) => {
     tags = e.target.value;
     localStorage.setItem('tags', e.target.value);
     setBg();

@@ -215,10 +215,10 @@ const volumeToggle = () => {
     isVolume = !isVolume;
     if (isVolume) {
       soundVolume.value = prevVolume;
-      soundBtn.src = '../src/assets/png/soundOn.png';
+      soundBtn.src = './src/assets/png/soundOn.png';
     } else {
       soundVolume.value = 0;
-      soundBtn.src = '../src/assets/png/soundOff.png';
+      soundBtn.src = './src/assets/png/soundOff.png';
     }
   });
 };
@@ -228,9 +228,9 @@ const savePrevVolume = () => {
   soundVolume.addEventListener('change', () => {
     prevVolume = soundVolume.value;
     if (soundVolume.value > '0.05') {
-      soundBtn.src = '../src/assets/png/soundOn.png';
+      soundBtn.src = './src/assets/png/soundOn.png';
     } else {
-      soundBtn.src = '../src/assets/png/soundOff.png';
+      soundBtn.src = './src/assets/png/soundOff.png';
     }
   });
 };

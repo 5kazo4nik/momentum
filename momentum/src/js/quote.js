@@ -12,7 +12,7 @@ function changeQuote(lng = 'en') {
 // Делает запрос и помещает ответ в поле цитаты и автора
 async function getQuote(lng = 'en') {
   // const res = await fetch('https://api.quotable.io/random');
-  const res = await fetch('../src/assets/json/quotes.json');
+  const res = await fetch('./src/assets/json/quotes.json');
   const data = await res.json();
   const quoteData = data[getRandomNum(24)];
   const quote = quoteData[lng];

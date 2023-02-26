@@ -450,13 +450,19 @@ body {
 /* //////////////////////////////////////////////////////////// НАСТРОЙКИ */
 
 .settings__button {
-  padding: 5px;
+  padding: 15px 5px 15px 5px;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
   top: 5%;
   display: flex;
   cursor: pointer;
+  transition: 0.5s;
+}
+
+.settings__button:hover {
+  background-color: #d6caca3f;
+  border-radius: 50%;
 }
 
 .settings__dot {

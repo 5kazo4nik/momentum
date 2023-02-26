@@ -59,3 +59,5 @@ window.onload = function () {
   // Устанавливает сохраненные настройки видимости
   setSettingsVisibility();
 };
+
+console.log('ga');

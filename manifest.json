@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "custom-momentum",
+  "short_name": "momentum",
+  "version": "0.1.0",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["./src/css/style.css", "./src/css/owfont-regular.css", "./dist/script.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": ["activeTab", "cookies", "clipboardWrite", "storage", "background", "tabs"]
+}
